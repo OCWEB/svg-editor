@@ -200,6 +200,7 @@ const App = () => {
 
 
   // render layout
+  // hide <Menu handleClick={ () => { setDownloadMenuVisible(false); downloadSVG(canvas.toSVG()); } }>{__('Download as SVG')}</Menu>
   return (
     <div id="app">
 
@@ -218,7 +219,7 @@ const App = () => {
             saveInBrowser.save('canvasEditor', canvas.toJSON());
             setNotification({ message: __('Project is saved in this browser!'), seconds: 3})
           } }><IconTick /></Button>
-        <Button title={__('Download as..')} handleClick={ () => setDownloadMenuVisible(!downloadMenuVisible) }><IconDownload /></Button>
+        <Button className="downloadimage" title={__('Download as..')} handleClick={ () => setDownloadMenuVisible(!downloadMenuVisible) }><IconDownload /></Button>
         <Button title={__('Close and open new')} handleClick={ () => {
             if (window.confirm(__('This will clear the canvas! Are you sure?'))) {
               setHistory({ index: null, states: [] }); canvas.clear(); saveInBrowser.remove('canvasEditor');
@@ -226,7 +227,7 @@ const App = () => {
           } } className="close"><IconClose /></Button>
 
         <FloatingMenu visible={downloadMenuVisible} setVisible={setDownloadMenuVisible}>
-          <Menu handleClick={ () => { setDownloadMenuVisible(false); downloadSVG(canvas.toSVG()); } }>{__('Download as SVG')}</Menu>
+          
           <Menu handleClick={ () => { setDownloadMenuVisible(false); downloadImage(canvas.toDataURL()); } }>{__('Download as PNG')}</Menu>
           <Menu handleClick={ () => { setDownloadMenuVisible(false);
               downloadImage(canvas.toDataURL({ format: 'jpeg' }), 'jpg', 'image/jpeg');

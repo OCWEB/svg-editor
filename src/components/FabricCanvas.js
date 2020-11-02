@@ -21,11 +21,19 @@ const FabricCanvas = (props) => {
 
 
     // create instance
-    const fabricCanvas = new fabric.Canvas('c').setDimensions({ width: 640, height: 480 })
+    const fabricCanvas = new fabric.Canvas('c').setDimensions({ width: 900, height: 1135 })
     fabricCanvas.originalW = fabricCanvas.width
     fabricCanvas.originalH = fabricCanvas.height
 
 
+    fabricCanvas.setBackgroundImage('map/map.png', fabricCanvas.renderAll.bind(fabricCanvas), {
+        top: -35,
+        left: 0,
+        originX: 'left',
+        originY: 'top',
+        scaleX: 0.75,
+        scaleY: 0.75
+    });
 
     // set up selection style
     fabric.Object.prototype.transparentCorners = false;

@@ -25,16 +25,19 @@ const demoContent2 = (canvas, fabric) => {
 
 
 
-  fabric.loadSVGFromURL('test.svg', function(objects) {
-    const obj = fabric.util.groupSVGElements(objects);
-    obj.set({ left: 0, top: 0 });
-    canvas.add(obj).renderAll();
-    canvas.item(0).lockMovementY = true;
-    canvas.item(0).lockMovementX = true;
-    canvas.item(0).lockScalingX = canvas.item(0).lockScalingY = true;
-    canvas.item(0).selectable = false;
+  // fabric.loadSVGFromURL('map/map.svg', function(objects) {
+  //   const obj = fabric.util.groupSVGElements(objects);
+  //   obj.set({ left: 130, top: 0, scaleX: 0.5, scaleY: 0.5});
+  //   canvas.add(obj).renderAll();
 
-  });
+  //   canvas.item(0).lockMovementY = true;
+  //   canvas.item(0).lockMovementX = true;
+  //   canvas.item(0).lockScalingX = canvas.item(0).lockScalingY = true;
+  //   canvas.item(0).selectable = false;
+  //   canvas.item(0).selected = false;
+  //   canvas.item(0).hasControls = false;
+
+  // });
 
 
 }
