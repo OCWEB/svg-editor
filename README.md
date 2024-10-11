@@ -1,8 +1,6 @@
 
 # SVG Editor
 
-Hello and thank you for buying this simple, user-friendly, browser-based SVG editor.
-
 This documentation assumes that you are already familiar with the basics of HTML, CSS, Javascript and ReactJS. If not, jump to the bottom and read the recommended resources.
 
 
